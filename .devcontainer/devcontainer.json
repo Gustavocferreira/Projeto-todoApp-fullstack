@@ -1,0 +1,90 @@
+{
+  "name": "To-Do App Full-Stack",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "backend",
+  "workspaceFolder": "/app",
+  
+  // Configurações do VS Code
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Python
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        
+        // JavaScript/React
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        
+        // Docker
+        "ms-azuretools.vscode-docker",
+        
+        // Utilitários
+        "eamodio.gitlens",
+        "aaron-bond.better-comments"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.formatting.provider": "black",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.python",
+          "editor.tabSize": 4
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
+        },
+        "[javascriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
+        }
+      }
+    }
+  },
+  
+  // Monta o código do frontend para edição
+  "mounts": [
+    "source=${localWorkspaceFolder}/frontend,target=/frontend,type=bind"
+  ],
+  
+  // Portas a serem expostas
+  "forwardPorts": [8000, 5173, 5432],
+  "portsAttributes": {
+    "8000": {
+      "label": "Backend API",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Frontend Vite",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+  
+  // Comandos pós-criação
+  "postCreateCommand": "pip install -r requirements.txt",
+  
+  // Mantém o container rodando
+  "overrideCommand": false,
+  
+  // Usuário remoto
+  "remoteUser": "root",
+  
+  // Features adicionais
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  }
+}
