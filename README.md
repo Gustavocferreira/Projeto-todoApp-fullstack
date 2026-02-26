@@ -52,6 +52,7 @@ Estrutura do Projeto
 💻 Desenvolvimento Local (Sem Docker)
 Para cenários de debug manual ou execução parcial dos serviços, o projeto pode ser iniciado diretamente via Python e Node.
 
+```
 Backend
 bash
 cd backend
@@ -59,14 +60,18 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\\Scripts\\activate
 pip install -r requirements.txt
 uvicorn src.main:app --reload
+```
+
+```
 Frontend
 bash
 cd frontend
 npm install
 npm run dev
-
+```
 Apenas uma dica: Ajuste seu .env local para usar localhost em vez dos nomes de serviço Docker.
 --
+
 
 🔌 API Reference
 --
