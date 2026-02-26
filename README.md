@@ -69,8 +69,11 @@ cd frontend
 npm install
 npm run dev
 ```
+
+--
 Apenas uma dica: Ajuste seu .env local para usar localhost em vez dos nomes de serviço Docker.
 --
+
 
 
 🔌 API Reference
@@ -104,5 +107,6 @@ Clean Commits e CI ready: Estrutura pronta para CI/CD (testes, lint e build auto
 👤 Sobre Mim
 --
 Desenvolvido por Gustavo Costa Ferreira
+
 Engenheiro focado em sistemas escaláveis, arquitetura limpa e automação de ambientes de desenvolvimento.
 Este projeto reflete um princípio base: *“um bom código não precisa ser explicado — apenas reproduzido com confiança por qualquer membro do time.”*
