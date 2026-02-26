@@ -28,7 +28,7 @@ API Docs (Swagger): http://localhost:8000/docs
 
 Health Check: curl http://localhost:8000/api/health
 ```
-# 🧩 Visão de Arquitetura
+### 🧩 Visão de Arquitetura
 A proposta é simples: uma aplicação moderna, modular e transparente na comunicação entre camadas.
 
 Backend (FastAPI): Utiliza o modelo assíncrono do ASGI e validação baseada em type hints com Pydantic. Segue o princípio de Service Layer, onde as rotas expõem apenas a interface HTTP, e a lógica de negócio permanece isolada.
@@ -49,7 +49,7 @@ graph TD
     F[Alembic - Migrations] -.->|Evolução de Esquema| E
 ```
 
-# 📂 Estrutura do Projeto
+### 📂 Estrutura do Projeto
 
 ```Plaintext
 .
@@ -67,7 +67,7 @@ graph TD
 ```
 
 
-# 🔌 API Reference
+### 🔌 API Reference
 
 ```Método	Endpoint	Descrição
 GET	/api/tasks	Lista tarefas com ordenação por data.
@@ -76,7 +76,7 @@ PUT	/api/tasks/{id}	Atualiza título, status ou data de vencimento.
 DELETE	/api/tasks/{id}	Remove o registro permanentemente.
 ```
 
-# 🧠 Boas Práticas e Convenções
+### 🧠 Boas Práticas e Convenções
 O projeto adota princípios inspirados em plataformas de produção modernas:
 
 Typing Estrito: Uso consistente de anotações de tipo, reduzindo erros em runtime.
@@ -85,7 +85,7 @@ Layered Architecture: Nenhuma rota tem acesso direto ao banco — o Service Laye
 
 Infraestrutura Reprodutível: Ambientes de Desenvolvimento e Produção utilizam a mesma base Docker.
 
-# 🚀 Roadmap de Evolução
+### 🚀 Roadmap de Evolução
 
 ```[x] Arquitetura Base e Dockerização
 
@@ -98,7 +98,7 @@ Infraestrutura Reprodutível: Ambientes de Desenvolvimento e Produção utilizam
 [ ] Pipeline CI/CD (GitHub Actions)
 ```
 
-# 👤 Sobre o Autor
+## 👤 Sobre o Autor
 Gustavo Costa Ferreira Full-stack Developer & DevOps no Instituto do Legislativo Paulista (Alesp).
 
 Focado em sistemas escaláveis, arquitetura limpa e automação de ambientes.
