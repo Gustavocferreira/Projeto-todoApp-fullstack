@@ -1,10 +1,9 @@
 Full-Stack To‑Do App (FastAPI + React + SQLAlchemy)
 *Este projeto nasceu como um exercício de engenharia para demonstrar boas práticas em arquitetura desacoplada, infraestrutura conteinerizada e design sustentável de aplicações full‑stack.
 Mais do que um simples “to‑do list”, o objetivo é mostrar como estruturar um sistema escalável e reproduzível, com separação clara entre responsabilidades e foco em DX (Developer Experience).*
-
+--
 
 ⚡ Quick Start (Docker)
---
 Todo o ecossistema — API, banco e frontend — é orquestrado via Docker Compose, garantindo isolamento total do ambiente e zero fricção na instalação.
 
 bash
@@ -21,7 +20,6 @@ API Docs (Swagger): http://localhost:8000/docs
 Health Check: curl http://localhost:8000/api/health
 
 🧩 Visão de Arquitetura
---
 A proposta é simples: uma aplicação moderna, modular e transparente na comunicação entre camadas.
 
 Backend (FastAPI): Utiliza o modelo assíncrono do ASGI e validação baseada em type hints com Pydantic. O backend segue o princípio de Service Layer, onde as rotas expõem apenas a interface HTTP, e a lógica de negócio permanece isolada.
@@ -37,7 +35,6 @@ Persistência (PostgreSQL): O banco é executado em container dedicado, com volu
 
 
 Estrutura do Projeto
---
 ```
 ├── backend/            
 │   ├── src/
@@ -69,20 +66,16 @@ cd frontend
 npm install
 npm run dev
 ```
-
---
 Apenas uma dica: Ajuste seu .env local para usar localhost em vez dos nomes de serviço Docker.
 --
 
-
-
 🔌 API Reference
---
 Método	Endpoint	Descrição
 GET	/api/tasks	Lista tarefas com ordenação por data
 POST	/api/tasks	Cria nova tarefa (validação via Pydantic)
 PUT	/api/tasks/{id}	Atualiza título ou status da tarefa
 DELETE	/api/tasks/{id}	Remove o registro permanentemente
+
 🧠 Boas Práticas e Convenções
 O projeto adota princípios inspirados em plataformas de produção modernas:
 
@@ -95,7 +88,6 @@ Infraçao Reprodutível: Ambientes Dev e Prod utilizam a mesma base Docker/Compo
 Clean Commits e CI ready: Estrutura pronta para CI/CD (testes, lint e build automatizados).
 
 🚀 Roadmap
---
  Migrações de schema com Alembic
 
  Testes de integração com Pytest + Testcontainers
@@ -104,9 +96,7 @@ Clean Commits e CI ready: Estrutura pronta para CI/CD (testes, lint e build auto
 
  Pipeline CI/CD (GitHub Actions) com steps para lint, teste e build
 
-👤 Sobre Mim
---
+👤 Sobre o Autor
 Desenvolvido por Gustavo Costa Ferreira
-
 Engenheiro focado em sistemas escaláveis, arquitetura limpa e automação de ambientes de desenvolvimento.
 Este projeto reflete um princípio base: *“um bom código não precisa ser explicado — apenas reproduzido com confiança por qualquer membro do time.”*
