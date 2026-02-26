@@ -38,8 +38,7 @@ Persistência (PostgreSQL): O banco é executado em container dedicado, com volu
 
 Estrutura do Projeto
 --
-text
-.
+```
 ├── backend/            
 │   ├── src/
 │   │   ├── routes/      # Endpoints REST
@@ -49,6 +48,7 @@ text
 ├── frontend/            # SPA (React + Vite)
 ├── .devcontainer/       # Setup automatizado para VS Code Dev Containers
 └── docker-compose.yml   # Orquestração completa dos serviços
+```
 💻 Desenvolvimento Local (Sem Docker)
 Para cenários de debug manual ou execução parcial dos serviços, o projeto pode ser iniciado diretamente via Python e Node.
 
