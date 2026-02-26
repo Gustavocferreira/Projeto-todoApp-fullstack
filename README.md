@@ -39,7 +39,7 @@ Frontend (React + Vite): O Vite foi escolhido pela velocidade de build e integra
 
 Persistência (PostgreSQL): Executado em container dedicado, com volumes persistentes. A prioridade é evitar dependências locais e manter o banco versionado de forma previsível.
 
-Fluxo de Dados
+```Fluxo de Dados
 Snippet de código
 graph TD
     A[Frontend - React/Vite] <-->|JSON/HTTP| B[FastAPI - Router]
@@ -47,10 +47,11 @@ graph TD
     C <--> D[SQLAlchemy - ORM]
     D <--> E[(PostgreSQL)]
     F[Alembic - Migrations] -.->|Evolução de Esquema| E
-
+```
 
 # 📂 Estrutura do Projeto
-Plaintext
+
+```Plaintext
 .
 ├── backend/
 │   ├── src/
@@ -63,15 +64,17 @@ Plaintext
 ├── frontend/            # SPA (React + Vite)
 ├── .devcontainer/       # Setup para VS Code Dev Containers
 └── docker-compose.yml   # Orquestração completa dos serviços
+```
 
 
 # 🔌 API Reference
-Método	Endpoint	Descrição
+
+```Método	Endpoint	Descrição
 GET	/api/tasks	Lista tarefas com ordenação por data.
 POST	/api/tasks	Cria nova tarefa (validação via Pydantic).
 PUT	/api/tasks/{id}	Atualiza título, status ou data de vencimento.
 DELETE	/api/tasks/{id}	Remove o registro permanentemente.
-
+```
 
 # 🧠 Boas Práticas e Convenções
 O projeto adota princípios inspirados em plataformas de produção modernas:
@@ -83,7 +86,8 @@ Layered Architecture: Nenhuma rota tem acesso direto ao banco — o Service Laye
 Infraestrutura Reprodutível: Ambientes de Desenvolvimento e Produção utilizam a mesma base Docker.
 
 # 🚀 Roadmap de Evolução
-[x] Arquitetura Base e Dockerização
+
+```[x] Arquitetura Base e Dockerização
 
 [ ] Migrações de schema com Alembic
 
@@ -92,6 +96,7 @@ Infraestrutura Reprodutível: Ambientes de Desenvolvimento e Produção utilizam
 [ ] Sistema de Gamificação (XP e Level Up por Task)
 
 [ ] Pipeline CI/CD (GitHub Actions)
+```
 
 # 👤 Sobre o Autor
 Gustavo Costa Ferreira Full-stack Developer & DevOps no Instituto do Legislativo Paulista (Alesp).
